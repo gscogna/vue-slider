@@ -11,17 +11,18 @@
     <body>
         <div id="format" class="container">
             <div class="slider-wrapper">
-                <div class="prev">
+                <div class="prev" @click ="indietro">
                     <i class="fas fa-angle-double-left"></i>
                 </div>
                 <div class="images">
-
+                    <img :src = "foto[contatore]" alt="">
                 </div>
-                <div class="next">
+                <div class="next" @click ="avanti">
                     <i class="fas fa-angle-double-right"></i>
                 </div>
                 <div class="nav">
-                    <i class="fas fa-circle"></i>
+                    <!-- ciclo v-for combinato con l indice -->
+                    <i class="fas fa-circle" v-for="(immagine,index) in foto" :class= "(index == contatore) ? 'active' : '' "></i>
                 </div>
             </div>
         </div>
